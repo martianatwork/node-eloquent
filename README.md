@@ -12,7 +12,7 @@ Relation takes inspiration from knex and sequelize, but the end goal to to compl
 Read [this wiki page](https://github.com/navjobs/relation/wiki/Comparison-with-other-ORMs---Query-Builders) for why this is better than knex and sequelize. The gist is this: syntax, and lazy loading relationships.
 
 ```
-npm install relation --save
+npm install @phpixel/node-eloquent --save
 
 //if using mysql driver
 npm install mysql --save
