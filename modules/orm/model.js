@@ -28,13 +28,13 @@ export default class Model {
 	}
 
 	/*
-	  grab the first item in a table
-	  ex Model.first()
+	  grab the item with matching primary key
+	  ex Model.find(id)
 	*/
 	static find(id) {
 		return adapter.select({
 			limit: 1,
-			where: `id = ${id}`,
+			where: {id},
 			model: this
 		})
 	}
