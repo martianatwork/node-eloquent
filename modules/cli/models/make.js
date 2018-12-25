@@ -1,7 +1,7 @@
 export default ({ args, cwd, fs }) => {
   let filePath = `${cwd}/models/${args[0].toLowerCase()}.js`
 
-  const template = `import { Model } from 'relation'
+  const template = `import { Model } from '@phpixel/node-eloquent'
 
 export default class ${args[0]} extends Model {
 

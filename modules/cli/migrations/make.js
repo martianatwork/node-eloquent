@@ -13,7 +13,7 @@ export default ({ args, cwd, fs }) => {
     fs.mkdirSync(path)
   }
 
-  const template = `import { Schema } from 'relation'
+  const template = `import { Schema } from '@phpixel/node-eloquent'
 
 /*
   Model Name: ${args[0]}
