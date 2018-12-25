@@ -6,3 +6,4 @@ circle.yml
 coverage
 migrations
 .env
+.git

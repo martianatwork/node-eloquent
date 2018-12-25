@@ -1,11 +1,12 @@
-### Relation
+### Node Eloquent
 
 ### Todo
 - more drivers
 - migrations support
 - more cli tools
 
-Relation takes inspiration from knex and sequelize, but the end goal to to completely mimick Laravel's Eloquent package. In order to achieve the best syntax possible, we are using ES6 Proxies, which is now supported in the latest version of node. Currently, only mysql is supported, but adding a new driver is trivial.
+Node Eloquent is a fork of another project by [Zach Silveira](https://github.com/zackify) Done under [Construction Jobs
+](https://github.com/ConstructionJobs). [Relation](https://github.com/ConstructionJobs/relation) is the original package which takes inspiration from knex and sequelize, but the end goal to to completely mimick Laravel's Eloquent package. In order to achieve the best syntax possible, we are using ES6 Proxies, which is now supported in the latest version of node. Currently, only mysql is supported, but adding a new driver is trivial.
 
 ## Why this over xyz?
 
@@ -14,13 +15,13 @@ Read [this wiki page](https://github.com/navjobs/relation/wiki/Comparison-with-o
 ```
 npm install @phpixel/node-eloquent --save
 
-//if using mysql driver
+//if using mysql driver this is peer dependency any way
 npm install mysql --save
 ```
 
 ### Setup
 
-You must set the following environment variables in your app. We recommend creating a `.env` file and using [dotenv](https://github.com/motdotla/dotenv)
+You must set the following environment variables in your app. We recommend creating a `.env` file and using [dotenv](https://github.com/motdotla/dotenv) (this is a peer dependency)
 
 ```
 DB_DRIVER=mysql
@@ -35,7 +36,7 @@ DB_NAME=blah
 `chat.js`
 
 ```js
-import { Model } from 'relation'
+import { Model } from 'node-eloquent'
 
 export default class Chat extends Model {
 
@@ -72,6 +73,7 @@ async function getChats {
 - `.select('column', 'column2')` contrain rows to select
 - `.first()` returns first results
 - `.limit(5)` limits the query
+- `find(<primary key>)` finds and retirns a relation currently only `id` as primary key is supported but dynamic primari key is coming soon
 
 ### Query Building
 
@@ -105,7 +107,7 @@ Todo:
 #### One to One Example
 
 ```js
-import { Model } from 'relation'
+import { Model } from 'node-eloquent'
 
 
 export default class User extends Model {
@@ -130,7 +132,7 @@ expect(user.name).to.be.equal('Bob')
 #### One to Many Example
 
 ```js
-import { Model } from 'relation'
+import { Model } from 'node-eloquent'
 
 
 export default class User extends Model {
@@ -157,16 +159,16 @@ Will go over this soon...
 
 ### CLI
 
-If you install relation globally (`npm install relation -g`) you can access the CLI methods to help create migrations, models, etc.
+If you install node-eloquent globally (`npm install @phpixel/node-eloquent -g`) you can access the CLI methods to help create migrations, models, etc.
 
 #### Migrations
 
-`relation make:migration User -m` -m will create a model as well
+`eloquent make:migration User -m` -m will create a model as well
 
 This will create a migration file that will allow you to build out tables.
 
 #### Models
 
-`relation make:model User`
+`eloquent make:model User`
 
 Creates a file in your current directory `/models/user.js` with a default model
