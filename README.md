@@ -6,7 +6,7 @@
 - more cli tools
 
 Node Eloquent is a fork of another project by [Zach Silveira](https://github.com/zackify) Done under [Construction Jobs
-](https://github.com/ConstructionJobs). [Relation](https://github.com/ConstructionJobs/relation) is the original package which takes inspiration from knex and sequelize, but the end goal to to completely mimick Laravel's Eloquent package. In order to achieve the best syntax possible, we are using ES6 Proxies, which is now supported in the latest version of node. Currently, only mysql is supported, but adding a new driver is trivial.
+](https://github.com/ConstructionJobs). [Relation](https://github.com/ConstructionJobs/relation) is the original package which takes inspiration from knex and sequelize, but the end goal is to completely mimic Laravel's Eloquent package. In order to achieve the best syntax possible, we are using ES6 Proxies, which is now supported in the latest version of node. Currently, only mysql is supported, but adding a new driver is trivial.
 
 ## Why this over xyz?
 
@@ -15,7 +15,7 @@ Read [this wiki page](https://github.com/navjobs/relation/wiki/Comparison-with-o
 ```
 npm install @phpixel/node-eloquent --save
 
-//if using mysql driver this is peer dependency any way
+//if using mysql driver this is peer dependency anyway
 npm install mysql --save
 ```
 
@@ -70,10 +70,10 @@ async function getChats {
 - `.all()` returns everything in the table
 - `.where({ fieldName: 'value' })` returns any matching results
 - `.create({ field: 'value'})` create a new row
-- `.select('column', 'column2')` contrain rows to select
+- `.select('column', 'column2')` constraint rows to select
 - `.first()` returns first results
 - `.limit(5)` limits the query
-- `find(<primary key>)` finds and retirns a relation currently only `id` as primary key is supported but dynamic primari key is coming soon
+- `find(<primary key>)` finds and returns a relation currently only `id` as primary key is supported but dynamic primary key is coming soon
 
 ### Query Building
 
@@ -155,7 +155,7 @@ let chats = await user.chats.first()
 
 ### Migrations
 
-Will go over this soon...
+Will go over this very soon...
 
 ### CLI
 

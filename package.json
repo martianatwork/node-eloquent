@@ -1,6 +1,6 @@
 {
   "name": "@phpixel/node-eloquent",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "",
   "bin": {
     "node-eloquent": "dist/cli/index.js"
