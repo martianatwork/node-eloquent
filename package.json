@@ -1,6 +1,6 @@
 {
-  "name": "relation",
-  "version": "0.1.0",
+  "name": "node-eloquent",
+  "version": "0.1.1",
   "description": "",
   "bin": {
     "relation": "dist/cli/index.js"
