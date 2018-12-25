@@ -1,5 +1,5 @@
 {
-  "name": "node-eloquent",
+  "name": "@phpixel/node-eloquent",
   "version": "0.1.1",
   "description": "",
   "bin": {
