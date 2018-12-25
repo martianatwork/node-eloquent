@@ -2,3 +2,4 @@ dist
 coverage
 migrations
 node_modules
+.env
