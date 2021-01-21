@@ -6,7 +6,7 @@
     "eloquent": "dist/cli/index.js"
   },
   "homepage": "https://github.com/MohdSharifIslam/node-eloquent#readme",
-  "main": "dist/index.js",
+  "main": "modules/index.js",
   "scripts": {
     "local-test": "mocha --require babel-register --require tests/setup/local-setup tests/unit --recursive",
     "build": "babel modules --out-dir dist --no-comments",
