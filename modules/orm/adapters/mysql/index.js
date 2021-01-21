@@ -15,8 +15,10 @@ class MysqlAdapter {
   */
   select({ model, select, where, limit, joins = [] }) {
     return new Promise((resolve, reject) => {
+      let whereQuery = "";
+      Object.entries(where).forEach(([key, value], index) => whereQuery += `${index !== 0 ? ' and ' : ' '}` +  connection.escape({[key]:value}))
       const options = {
-        sql: `SELECT ${select ? select : '*'} FROM ${model.tableName()}${where ? ` WHERE ${connection.escape(where)}` : ''}${this.getJoins(joins)}${limit ? ` LIMIT ${connection.escape(limit)}` : ''}`,
+        sql: `SELECT ${select ? select : '*'} FROM ${model.tableName()}${where ? ` WHERE ${whereQuery}` : ''}${this.getJoins(joins)}${limit ? ` LIMIT ${connection.escape(limit)}` : ''}`,
         nestTables: joins.length > 0 ? true : false
       }
 
