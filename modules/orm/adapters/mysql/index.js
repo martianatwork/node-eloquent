@@ -47,6 +47,23 @@ class MysqlAdapter {
   }
 
   /*
+    create a row in the database
+  */
+  update({ model, data, where }) {
+    return new Promise((resolve, reject) => {
+      let whereQuery = "";
+      Object.entries(where).forEach(([key, value], index) => whereQuery += `${index !== 0 ? ' and ' : ' '}` +  connection.escape({[key]:value}))
+      connection.query(`UPDATE ${model.tableName()} SET ?${where ? ` WHERE ${whereQuery}` : ''}`, data,  (error, result) => {
+        if(error) return reject(error)
+        resolve(this.makeRelatable({
+          id: result.insertId,
+          ...data
+        }, model))
+      })
+    })
+  }
+
+  /*
     returns a new query builder instance
   */
   queryBuilder(options) {
