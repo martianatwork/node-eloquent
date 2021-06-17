@@ -56,7 +56,6 @@ class MysqlAdapter {
       connection.query(`UPDATE ${model.tableName()} SET ?${where ? ` WHERE ${whereQuery}` : ''}`, data,  (error, result) => {
         if(error) return reject(error)
         resolve(this.makeRelatable({
-          id: result.insertId,
           ...data
         }, model))
       })
